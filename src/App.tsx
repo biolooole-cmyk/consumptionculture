@@ -213,7 +213,7 @@ export default function App() {
                       <TaskItem 
                         key={task.id}
                         {...task}
-                        value={answers[task.id] || (task.type === 'table' || task.type === 'comparison' ? [] : '')}
+                        value={answers[task.id] || (['table', 'comparison', 'match'].includes(task.type) ? [] : '')}
                         onChange={(id, val) => handleAnswerChange(id, val)}
                       />
                     ))}
